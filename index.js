@@ -81,27 +81,30 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/uploads", express.static("uploads"));
 
 // Routes
-app.use("/user", require("./routes/User"));
-app.use("/roles", require("./routes/Roles"));
-app.use("/states", require("./routes/States"));
-app.use("/coupon", require("./routes/Coupon"));
-app.use("/login", require("./routes/UserLogs"));
-app.use("/contact", require("./routes/Contact"));
-app.use("/regions", require("./routes/Regions"));
-app.use("/country", require("./routes/Country"));
-app.use("/location", require("./routes/Cordinates"));
-app.use("/paynenttype", require("./routes/Payment"));
-app.use("/payment", require("./routes/FacilityStoragePayment.js"));
-// app.use("/validate", require("./middlewares/Validate"));
-app.use("/storagetype", require("./routes/StorageType"));
-app.use("/goodstypes", require("./routes/GoodsType"));
-app.use("/storagefacility", require("./routes/StorageFacility"));
-app.use("/storagecapacity", require("./routes/StorageCapacity"));
-app.use("/storagetransactions", require("./routes/StorageTransactions"));
+// app.use("/user", require("./routes/User"));
+// app.use("/roles", require("./routes/Roles"));
+// app.use("/states", require("./routes/States"));
+// app.use("/coupon", require("./routes/Coupon"));
+// app.use("/login", require("./routes/UserLogs"));
+// app.use("/contact", require("./routes/Contact"));
+// app.use("/regions", require("./routes/Regions"));
+// app.use("/country", require("./routes/Country"));
+// app.use("/location", require("./routes/Cordinates"));
+// app.use("/paynenttype", require("./routes/Payment"));
+// app.use("/payment", require("./routes/FacilityStoragePayment.js"));
+// // app.use("/validate", require("./middlewares/Validate"));
+// app.use("/storagetype", require("./routes/StorageType"));
+// app.use("/goodstypes", require("./routes/GoodsType"));
+// app.use("/storagefacility", require("./routes/StorageFacility"));
+// app.use("/storagecapacity", require("./routes/StorageCapacity"));
+// app.use("/storagetransactions", require("./routes/StorageTransactions"));
 // app.get("/GetAzureMapsToken", (req, res) => {
 //   GetAzureMapsToken(req, res);
 // });
 
+app.get("/", (req, res) => {
+  res.send("Hello From  Cold Store Server!");
+});
 // Start server
 const PORT = process.env.PORT || 8888;
 app.listen(PORT, () => {
